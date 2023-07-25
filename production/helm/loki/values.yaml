@@ -692,7 +692,7 @@ write:
     targetMemoryUtilizationPercentage:
     # -- Behavior policies while scaling.
     behavior:
-    # -- see https://github.com/grafana/loki/blob/main/docs/sources/operations/storage/wal.md#how-to-scale-updown for scaledown details
+      # -- see https://github.com/grafana/loki/blob/main/docs/sources/operations/storage/wal.md#how-to-scale-updown for scaledown details
       scaleUp:
         policies:
           - type: Pods
@@ -860,7 +860,8 @@ read:
     # -- Target memory utilisation percentage for the read
     targetMemoryUtilizationPercentage:
     # -- Behavior policies while scaling.
-    behavior: {}
+    behavior:
+      {}
       #  scaleUp:
       #   stabilizationWindowSeconds: 300
       #   policies:
@@ -1397,7 +1398,7 @@ tracing:
 # Configuration for `minio` child chart
 # -------------------------------------
 minio:
-  enabled: false
+  enabled: true
   replicas: 1
   # Minio requires 2 to 16 drives for erasure code (drivesPerNode * replicas)
   # https://docs.min.io/docs/minio-erasure-code-quickstart-guide
@@ -1416,7 +1417,7 @@ minio:
       policy: none
       purge: false
   persistence:
-    size: 5Gi
+    size: 200Gi
   resources:
     requests:
       cpu: 100m
