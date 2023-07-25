@@ -520,7 +520,7 @@ monitoring:
   # Dashboards for monitoring Loki
   dashboards:
     # -- If enabled, create configmap with dashboards for monitoring Loki
-    enabled: true
+    enabled: false
     # -- Alternative namespace to create dashboards ConfigMap in
     namespace: null
     # -- Additional annotations for the dashboards ConfigMap
@@ -531,7 +531,7 @@ monitoring:
   # Recording rules for monitoring Loki, required for some dashboards
   rules:
     # -- If enabled, create PrometheusRule resource with Loki recording rules
-    enabled: true
+    enabled: false
     # -- Include alerting rules
     alerting: true
     # -- Alternative namespace to create PrometheusRule resources in
@@ -594,7 +594,7 @@ monitoring:
   # It will create custom resources for GrafanaAgent, LogsInstance, and PodLogs to configure
   # scrape configs to scrape its own logs with the labels expected by the included dashboards.
   selfMonitoring:
-    enabled: false
+    enabled: true
     # -- Tenant to use for self monitoring
     tenant:
       # -- Name of the tenant
