@@ -258,19 +258,19 @@ loki:
   # -- Storage config. Providing this will automatically populate all necessary storage configs in the templated config.
   storage:
     bucketNames:
-      chunks: chunks
-      ruler: ruler
-      admin: admin
+      chunks: loki-chunks
+      ruler: loki-ruler
+      admin: loki-admin
     type: s3
     s3:
-      s3: null
-      endpoint: null
+      s3: true
+      endpoint: minio.minio.svc.cluster.local:9000
       region: null
-      secretAccessKey: null
-      accessKeyId: null
+      secretAccessKey: 0XSRWCWLIIdZU0RpVcDm3194RsRQFgfbCMUmwd0C
+      accessKeyId: Wy5Fcy6wgF8KfYSfnWQL
       signatureVersion: null
       s3ForcePathStyle: false
-      insecure: false
+      insecure: true
       http_config: {}
     gcs:
       chunkBufferSize: 0
@@ -1398,7 +1398,7 @@ tracing:
 # Configuration for `minio` child chart
 # -------------------------------------
 minio:
-  enabled: true
+  enabled: false
   replicas: 1
   # Minio requires 2 to 16 drives for erasure code (drivesPerNode * replicas)
   # https://docs.min.io/docs/minio-erasure-code-quickstart-guide
