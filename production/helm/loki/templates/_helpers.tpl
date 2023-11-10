@@ -215,9 +215,6 @@ s3:
   {{- with .endpoint }}
   endpoint: {{ . }}
   {{- end }}
-  {{- with .region }}
-  region: {{ . }}
-  {{- end}}
   bucketnames: {{ $.Values.loki.storage.bucketNames.chunks }}
   {{- with .secretAccessKey }}
   secret_access_key: {{ . }}
@@ -301,9 +298,6 @@ s3:
   {{- with .endpoint }}
   endpoint: {{ . }}
   {{- end }}
-  {{- with .region }}
-  region: {{ . }}
-  {{- end}}
   bucketnames: {{ $.Values.loki.storage.bucketNames.ruler }}
   {{- with .secretAccessKey }}
   secret_access_key: {{ . }}
@@ -728,7 +722,7 @@ http {
     location = /config {
       proxy_pass       {{ $backendUrl }}$request_uri;
     }
-    
+
     {{- if and .Values.enterprise.enabled .Values.enterprise.adminApi.enabled }}
     # Admin API
     location ^~ /admin/api/ {
