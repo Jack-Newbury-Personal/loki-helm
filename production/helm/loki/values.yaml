@@ -264,7 +264,7 @@ loki:
     type: s3
     s3:
       s3: true
-      endpoint: minio.minio.svc.cluster.local.:9000
+      endpoint: minio.minio.svc.cluster.local:9000
       secretAccessKey: 0XSRWCWLIIdZU0RpVcDm3194RsRQFgfbCMUmwd0C
       accessKeyId: Wy5Fcy6wgF8KfYSfnWQL
       signatureVersion: null
