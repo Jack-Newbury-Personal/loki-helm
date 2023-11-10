@@ -271,6 +271,7 @@ loki:
       s3ForcePathStyle: true
       insecure: true
       http_config: {}
+      region: null
     gcs:
       chunkBufferSize: 0
       requestTimeout: "0s"

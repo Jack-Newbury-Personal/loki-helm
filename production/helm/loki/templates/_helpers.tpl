@@ -215,6 +215,9 @@ s3:
   {{- with .endpoint }}
   endpoint: {{ . }}
   {{- end }}
+  {{- with .region }}
+  region: {{ . }}
+  {{- end}}
   bucketnames: {{ $.Values.loki.storage.bucketNames.chunks }}
   {{- with .secretAccessKey }}
   secret_access_key: {{ . }}
@@ -298,6 +301,9 @@ s3:
   {{- with .endpoint }}
   endpoint: {{ . }}
   {{- end }}
+  {{- with .region }}
+  region: {{ . }}
+  {{- end}}
   bucketnames: {{ $.Values.loki.storage.bucketNames.ruler }}
   {{- with .secretAccessKey }}
   secret_access_key: {{ . }}
