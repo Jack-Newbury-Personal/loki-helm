@@ -268,7 +268,7 @@ loki:
       secretAccessKey: 0XSRWCWLIIdZU0RpVcDm3194RsRQFgfbCMUmwd0C
       accessKeyId: Wy5Fcy6wgF8KfYSfnWQL
       signatureVersion: null
-      s3ForcePathStyle: false
+      s3ForcePathStyle: true
       insecure: true
       http_config: {}
     gcs:
