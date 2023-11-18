@@ -555,7 +555,7 @@ monitoring:
   # ServiceMonitor configuration
   serviceMonitor:
     # -- If enabled, ServiceMonitor resources for Prometheus Operator are created
-    enabled: false
+    enabled: true
     # -- Namespace selector for ServiceMonitor resources
     namespaceSelector: {}
     # -- ServiceMonitor annotations
@@ -581,7 +581,7 @@ monitoring:
     # -- If defined, will create a MetricsInstance for the Grafana Agent Operator.
     metricsInstance:
       # -- If enabled, MetricsInstance resources for Grafana Agent Operator are created
-      enabled: false
+      enabled: true
       # -- MetricsInstance annotations
       annotations: {}
       # -- Additional MetricsInstance labels
