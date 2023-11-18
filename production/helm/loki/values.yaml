@@ -587,7 +587,10 @@ monitoring:
       # -- Additional MetricsInstance labels
       labels: {}
       # -- If defined a MetricsInstance will be created to remote write metrics.
-      remoteWrite: null
+      remoteWrite:
+        enabled: true
+        remote:
+          url: "http://mimir-nginx.observability.svc.cluster.local/api/v1/push"
   # Self monitoring determines whether Loki should scrape its own logs.
   # This feature currently relies on the Grafana Agent Operator being installed,
   # which is installed by default using the grafana-agent-operator sub-chart.
@@ -607,7 +610,7 @@ monitoring:
       # -- Controls whether to install the Grafana Agent Operator and its CRDs.
       # Note that helm will not install CRDs if this flag is enabled during an upgrade.
       # In that case install the CRDs manually from https://github.com/grafana/agent/tree/main/production/operator/crds
-      installOperator: false
+      installOperator: true
       # -- Grafana Agent annotations
       annotations: {}
       # -- Additional Grafana Agent labels
