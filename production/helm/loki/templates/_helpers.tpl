@@ -199,11 +199,8 @@ Generated storage config for loki common config
 */}}
 {{- define "loki.commonStorageConfig" -}}
 {{- if eq .Values.loki.storage.type "s3" -}}
-{{- with .Values.loki.storage.s3 }}
 s3:
-  {{- with .endpoint }}
-  endpoint: {{ . }}
-  {{- end }}
+  endpoint: {{ $.Values.loki.storage.s3.endpoint }}
   bucketnames: {{ $.Values.loki.storage.bucketNames.chunks }}
   secret_access_key: {{ $.Values.minio.rootPassword }}
   access_key_id: {{ $.Values.minio.rootUser }}
