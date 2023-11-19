@@ -198,15 +198,18 @@ Docker image name for kubectl container
 Generated storage config for loki common config
 */}}
 {{- define "loki.commonStorageConfig" -}}
-{{- if .Values.minio.enabled -}}
+{{- if eq .Values.loki.storage.type "s3" -}}
+{{- with .Values.loki.storage.s3 }}
 s3:
-  endpoint: {{ include "loki.minio" $ }}
+  {{- with .endpoint }}
+  endpoint: {{ . }}
+  {{- end }}
   bucketnames: {{ $.Values.loki.storage.bucketNames.chunks }}
   secret_access_key: {{ $.Values.minio.rootPassword }}
   access_key_id: {{ $.Values.minio.rootUser }}
   s3forcepathstyle: true
   insecure: true
-{{- else if eq .Values.loki.storage.type "s3" -}}
+{{- else if .Values.minio.enabled}}
 {{- with .Values.loki.storage.s3 }}
 s3:
   {{- with .s3 }}
