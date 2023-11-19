@@ -202,8 +202,8 @@ Generated storage config for loki common config
 s3:
   endpoint: {{ $.Values.loki.storage.s3.endpoint }}
   bucketnames: {{ $.Values.loki.storage.bucketNames.chunks }}
-  secret_access_key: {{ $.Values.minio.rootPassword }}
-  access_key_id: {{ $.Values.minio.rootUser }}
+  secret_access_key: {{ $.Values.loki.storage.s3.secretAccessKey }}
+  access_key_id: {{ $.Values.loki.storage.s3.accessKeyId }}
   s3forcepathstyle: true
   insecure: true
 {{- else if .Values.minio.enabled}}
