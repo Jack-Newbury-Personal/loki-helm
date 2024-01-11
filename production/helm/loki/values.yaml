@@ -588,7 +588,7 @@ monitoring:
       labels: {}
       # -- If defined a MetricsInstance will be created to remote write metrics.
       remoteWrite:
-        - url: "http://mimir-nginx.observability.svc.cluster.local/api/v1/push"
+        - url: "http://mimir-nginx.mimir.svc.cluster.local/api/v1/push"
   # Self monitoring determines whether Loki should scrape its own logs.
   # This feature currently relies on the Grafana Agent Operator being installed,
   # which is installed by default using the grafana-agent-operator sub-chart.
